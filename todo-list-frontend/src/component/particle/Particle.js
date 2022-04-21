@@ -17,15 +17,15 @@ const Particle = () => {
             loaded={particlesLoaded}
             options={{
                 background: {
-                    color: "#000000",
+                    color: "#690000",
                     image: "",
-                    position: "50% 50%",
+                    position: "fixed",
                     repeat: "no-repeat",
-                    size: "cover",
+                    // size: "cover",
                 },
                 fullScreen: {
                     enable: true,
-                    zIndex: 1,
+                    zIndex: -1,
                 },
                 particles: {
                     number: {
@@ -36,11 +36,11 @@ const Particle = () => {
                         },
                     },
                     color: {
-                        value: "#ffffff",
+                        value: "#690000",
                     },
                     shadow: {
                         enable: true,
-                        color: "#000000",
+                        color: "#690000",
                         blur: 5,
                         offset: {
                             x: 3,
