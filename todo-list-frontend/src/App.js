@@ -1,4 +1,4 @@
-import Particle from "./component/particle/particle"
+import Particle from "./component/particle/Particle"
 import "./App.css"
 
 function App() {
