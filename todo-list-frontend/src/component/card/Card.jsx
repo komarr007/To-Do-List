@@ -1,16 +1,25 @@
 import React from "react"
+import CardList from "../card-list/CardList"
 import "./style.css"
 
-const Card = () => {
+function Card(props) {
+    const state = props.state
+
     return (
         <div className="card">
-            <button
-                onClick={() => {
-                    console.log("PELER")
-                }}
-            >
-                TES DAH
-            </button>
+            <div className="state">
+                <h1>{state}</h1>
+                <button
+                    onClick={() => {
+                        console.log("TES")
+                    }}
+                >
+                    <b>TES DAH</b>
+                </button>
+            </div>
+            <div className="card-item">
+                <CardList />
+            </div>
         </div>
     )
 }
