@@ -8,9 +8,9 @@ function App() {
         <div className="App">
             <Particle />
             <div className="card-list">
-                <Card />
-                <Card />
-                <Card />
+                <Card state="Pending" />
+                <Card state="On Going" />
+                <Card state="Done" />
             </div>
         </div>
     )

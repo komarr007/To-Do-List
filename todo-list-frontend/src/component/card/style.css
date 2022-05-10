@@ -9,3 +9,29 @@
     width: 22%;
     margin: 100px 0 0 0;
 }
+
+.state {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h1 {
+    color: #000;
+}
+
+button {
+    margin-bottom: 1rem;
+    top: 50%;
+    background-color: #14ccdd;
+    color: #000;
+    font-weight: 100;
+    border: none;
+    border-radius: 25px;
+    min-height: 10px;
+    min-width: 50px;
+}
+
+button:hover {
+    cursor: pointer;
+}
