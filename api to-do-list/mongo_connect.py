@@ -26,13 +26,3 @@ def format_data(Tittle, Description, Due_Date, Status, created_at):
         'Due_Date': Due_Date,
         'Status': Status
     }
-
-if __name__ == "__main__":    
-    dbname = get_database('testing')
-    collection_name = dbname['to_do_list']
-    update_document(collection_name, 
-    {"Tittle":"Tittle1"},
-    {'$set':{'Status':'Done', 
-    'Due_Date':datetime(2022, 5, 17),
-    'Description':'This is a test',
-    'created_at':datetime.now()}})
