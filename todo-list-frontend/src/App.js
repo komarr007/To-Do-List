@@ -6,7 +6,7 @@ function App() {
     return (
         <div className="App">
             <Particle />
-            <div className="card-list">
+            <div className="card-list-main">
                 <Card state="Pending" />
                 <Card state="On Going" />
                 <Card state="Done" />

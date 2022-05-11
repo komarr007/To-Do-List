@@ -9,16 +9,9 @@ function Card(props) {
         <div className="card">
             <div className="state">
                 <h1>{state}</h1>
-                <button
-                    onClick={() => {
-                        console.log("TES")
-                    }}
-                >
-                    <b>TES DAH</b>
-                </button>
             </div>
             <div className="card-item">
-                <CardList />
+                <CardList state={state} />
             </div>
         </div>
     )

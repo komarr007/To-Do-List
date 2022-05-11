@@ -1,9 +1,11 @@
 .card-list {
-    background-color: black;
-    color: white;
+    background-color: aquamarine;
     border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 0.001rem 0 2px 15px;
 }
 
-h2 {
-    color: white;
+h2,
+p {
+    color: black;
 }

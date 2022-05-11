@@ -8,16 +8,20 @@
     height: 500px;
     width: 22%;
     margin: 100px 0 0 0;
+    overflow-y: scroll;
 }
 
 .state {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    background-color: #fff;
+    width: 22%;
+    top: 100px;
+    position: fixed;
+    text-align: center;
 }
 
 h1 {
     color: #000;
+    line-height: 0.5em;
 }
 
 button {
@@ -34,4 +38,23 @@ button {
 
 button:hover {
     cursor: pointer;
+}
+
+.card-item {
+    margin-top: 50px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    opacity: 0.8;
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(151, 151, 151);
+    border-radius: 100px;
 }
