@@ -15,8 +15,11 @@ def insert_document(collection, document):
 def update_document(collection, query, new_values):
     return collection.update_one(query, new_values)
 
-def shows_data(collection_name, *args):
+def shows_one_data(collection_name, *args):
     return collection_name.find_one(*args)
+
+def shows_all_data(collection_name, *args):
+    return collection_name.find(*args)
 
 def format_data(Tittle, Description, Due_Date, Status, created_at):
     return {
