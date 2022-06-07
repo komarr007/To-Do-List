@@ -20,6 +20,11 @@ async def root():
 
 @app.get("/data")
 async def data():
+    all_data = []
     dbname = mongo_connect.get_database('testing')
     collection_name = dbname['to_do_list']
-    return mongo_connect.shows_data(collection_name, {"Tittle":"Tittle1"},{'_id':0})
+    for data in mongo_connect.shows_all_data(collection_name, {}, {"_id": 0}):
+        all_data.append(data)
+    
+    return all_data
+    
