@@ -1,4 +1,5 @@
 from datetime import datetime
+import uuid
 
 def get_database(database_name):
     from pymongo import MongoClient
@@ -9,8 +10,11 @@ def get_database(database_name):
 
     return client[database_name]
     
-def insert_document(collection, document):
+def insert_many_document(collection, document):
     return collection.insert_many(document)
+
+def insert_one_document(collection, document):
+    return collection.insert_one(document)
 
 def update_document(collection, query, new_values):
     return collection.update_one(query, new_values)
@@ -21,9 +25,13 @@ def shows_one_data(collection_name, *args):
 def shows_all_data(collection_name, *args):
     return collection_name.find(*args)
 
-def format_data(Tittle, Description, Due_Date, Status, created_at):
+def generate_id():
+    return str(uuid.uuid4())
+
+def format_data(Id, Tittle, Description, Due_Date, Status, Created_at):
     return {
-        'created_at': created_at,
+        'id': Id,
+        'created_at': Created_at,
         'Tittle': Tittle,
         'Description': Description,
         'Due_Date': Due_Date,
