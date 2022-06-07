@@ -4,12 +4,6 @@ import mongo_connect
 from pydantic import BaseModel
 import datetime
 
-class Record(BaseModel):
-    title: str
-    description: str
-    date: str
-    status: str
-
 app = FastAPI()
 
 origins = ["http://localhost:3000"]
@@ -38,10 +32,11 @@ async def data():
     return all_data
 
 @app.post("/record")
-async def create_record(record: Record):
+async def create_record(title: str, desc: str):
     id = mongo_connect.generate_id()
+    status = "Pending"
     created_at = datetime.datetime.now()
     due_date = datetime.datetime.today() + datetime.timedelta(days=1)
-    data = mongo_connect.format_data(id, record.title, record.description, due_date, record.status, created_at)
+    data = mongo_connect.format_data(id, title, desc, due_date, status, created_at)
     mongo_connect.insert_one_document(collection_name, data)
     return {"message": "Success"}
