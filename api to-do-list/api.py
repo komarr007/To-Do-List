@@ -4,7 +4,21 @@ import mongo_connect
 from pydantic import BaseModel
 import datetime
 
-app = FastAPI()
+app = FastAPI(
+    title="To Do List App",
+    description="you want some meta? eat this shit",
+    version="0.0.1",
+    terms_of_service="http://canuseethemeta?fuckoff.com/terms/",
+    contact={
+        "name": "RIGAQI???",
+        "url": "http://komarr007.github.io/RIGAQI",
+        "email": "mariorangga000@gmail.com",
+    },
+    license_info={
+        "name": "Apache 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
+    },
+)
 
 origins = ["http://localhost:3000"]
 
@@ -40,3 +54,17 @@ async def create_record(title: str, desc: str):
     data = mongo_connect.format_data(id, title, desc, due_date, status, created_at)
     mongo_connect.insert_one_document(collection_name, data)
     return {"message": "Success"}
+
+@app.put("/update") # update data
+async def update_record(id: str, title: str, desc: str, status: str):
+    query = {
+        "id":id
+    }
+    new_values = { "$set": {
+        "Status":status,
+        "Description":desc,
+        "Tittle":title
+    }
+    }
+    mongo_connect.update_document(collection_name,query,new_values)
+    return {"message":"data updated!"} 
