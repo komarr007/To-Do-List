@@ -55,7 +55,7 @@ async def create_record(title: str, desc: str):
     mongo_connect.insert_one_document(collection_name, data)
     return {"message": "Success"}
 
-@app.put("/update")
+@app.put("/update") # update data
 async def update_record(id: str, title: str, desc: str, status: str):
     query = {
         "id":id
