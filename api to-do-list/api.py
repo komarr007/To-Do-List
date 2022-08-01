@@ -56,15 +56,21 @@ async def create_record(title: str, desc: str):
     return {"message": "Success"}
 
 @app.put("/update") # update data
-async def update_record(id: str, title: str, desc: str, status: str):
+async def update_record(id: str, status: str):
     query = {
         "id":id
     }
     new_values = { "$set": {
         "Status":status,
-        "Description":desc,
-        "Tittle":title
     }
     }
     mongo_connect.update_document(collection_name,query,new_values)
     return {"message":"data updated!"} 
+
+@app.delete("/delete") # delete data
+async def delete_record(id: str):
+    query = {
+        "id":id
+    }
+    mongo_connect.delete_document(collection_name,query)
+    return {"message":"data deleted!"}
