@@ -24,21 +24,34 @@ const CardList = (props) => {
         fetchData()
     }, [])
 
-    const updateButton = async (id, title, desc, status) => {
+    const updateButton = async (id, status) => {
         let state = "Done"
         if (status === "Pending") {
             state = "On Going"
         } else if (status === "On Going") {
             state = "Done"
         }
+        try {
+            await axios
+                .put("http://127.0.0.1:8000/update?id=" + id + "&status=" + state)
+                .then((response) => {
+                    console.log(response)
+                })
+            document.location.reload()
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
-        await axios
-            .put("http://127.0.0.1:8000/update?id=" + id + "&status=" + state)
-            .then((response) => {
+    const deleteButton = async (id) => {
+        try {
+            await axios.delete("http://127.0.0.1:8000/delete?id=" + id).then((response) => {
                 console.log(response)
             })
-
-        window.location.reload()
+            fetchData()
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
@@ -53,23 +66,20 @@ const CardList = (props) => {
                             </div>
                             <div className="card-list-button">
                                 {list.Status === "Done" ? (
-                                    <button>delete</button>
+                                    <button
+                                        className="delete-button"
+                                        onClick={() => deleteButton(list.id)}
+                                    />
                                 ) : (
                                     <div className="card-list-button">
                                         <button
-                                            className="update"
-                                            onClick={() =>
-                                                updateButton(
-                                                    list.id,
-                                                    list.Tittle,
-                                                    list.Description,
-                                                    list.Status
-                                                )
-                                            }
-                                        >
-                                            update
-                                        </button>
-                                        <button>delete</button>
+                                            className="check-button"
+                                            onClick={() => updateButton(list.id, list.Status)}
+                                        />
+                                        <button
+                                            className="delete-button"
+                                            onClick={() => deleteButton(list.id)}
+                                        />
                                     </div>
                                 )}
                             </div>

@@ -1,6 +1,5 @@
 import Particle from "./component/particle/Particle"
 import Card from "./component/card/Card"
-import "./App.css"
 import Modals from "./component/modals/Modals"
 import React, { useState } from "react"
 

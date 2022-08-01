@@ -41,6 +41,7 @@ const Modals = (props) => {
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
                                 placeholder="Title"
+                                className="input-title"
                             />
                             <br />
                             <textarea
