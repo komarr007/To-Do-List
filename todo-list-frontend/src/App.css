@@ -3,3 +3,13 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+.btn-modal {
+    background-color: rgb(12, 213, 146);
+    color: black;
+    border-radius: 25px;
+    padding: 14px 20px;
+    margin: 32px 0 32px 68px;
+    border: none;
+    cursor: pointer;
+}

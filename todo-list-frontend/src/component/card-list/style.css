@@ -1,8 +1,15 @@
 .card-list {
     background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border-radius: 5px;
     margin-bottom: 10px;
-    padding: 0.001rem 0 2px 15px;
+    padding: 0.002rem 15px 2px 15px;
+}
+
+button {
+    height: 30%;
 }
 
 h2,

@@ -37,3 +37,6 @@ def format_data(Id, Tittle, Description, Due_Date, Status, Created_at):
         'Due_Date': Due_Date,
         'Status': Status
     }
+
+def delete_document(collection_name, query):
+    return collection_name.delete_one(query)

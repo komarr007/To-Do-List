@@ -1,0 +1,83 @@
+.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: 700px;
+    background-color: rgb(61, 215, 146);
+    border-radius: 20px;
+}
+
+.header,
+.footer {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.footer {
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+.title {
+    margin: 0;
+    text-align: center;
+    font-size: 25px;
+    color: black;
+}
+
+.body {
+    padding: 10px;
+    color: white;
+    text-align: center;
+    margin-bottom: -30px;
+}
+
+.close-btn {
+    background-color: rgb(96, 95, 95);
+    color: white;
+    border-radius: 25px;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+}
+.submit-btn {
+    background-color: aquamarine;
+    color: black;
+    border-radius: 25px;
+    padding: 12px;
+    margin-right: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+input,
+textarea {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    max-width: 600px;
+    min-width: 600px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    font-size: x-large;
+    font-family: monospace;
+    color: black;
+}
+
+input,
+textarea:focus {
+    outline: none;
+}
+textarea {
+    height: 150px;
+    max-height: 250px;
+}

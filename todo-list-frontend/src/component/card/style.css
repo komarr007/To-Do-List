@@ -7,14 +7,12 @@
     padding: 20px;
     height: 500px;
     width: 22%;
-    margin: 100px 0 0 0;
     overflow-y: scroll;
 }
 
 .state {
     background-color: #fff;
     width: 22%;
-    top: 100px;
     position: fixed;
     text-align: center;
 }
@@ -24,27 +22,12 @@ h1 {
     line-height: 0.5em;
 }
 
-button {
-    margin-bottom: 1rem;
-    top: 50%;
-    background-color: #14ccdd;
-    color: #000;
-    font-weight: 100;
-    border: none;
-    border-radius: 25px;
-    min-height: 10px;
-    min-width: 50px;
-}
-
-button:hover {
-    cursor: pointer;
-}
-
 .card-item {
     margin-top: 50px;
 }
 
 ::-webkit-scrollbar {
+    margin-top: 50px;
     width: 5px;
 }
 
