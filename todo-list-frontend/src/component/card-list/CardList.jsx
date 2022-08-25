@@ -22,7 +22,7 @@ const CardList = (props) => {
 
     useEffect(() => {
         fetchData()
-    }, [])
+    }, [lists])
 
     const updateButton = async (id, status) => {
         let state = "Done"
@@ -37,7 +37,6 @@ const CardList = (props) => {
                 .then((response) => {
                     console.log(response)
                 })
-            document.location.reload()
         } catch (error) {
             console.log(error)
         }

@@ -14,7 +14,9 @@ const Modals = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         addPosts(title, description)
-        window.location.reload()
+        props.onClose()
+        setTitle("")
+        setDescription("")
     }
 
     const addPosts = async (title, description) => {
