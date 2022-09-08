@@ -35,7 +35,7 @@ code {
     height: 40px;
     background: url("assets/trash-outline.svg");
     background-size: contain;
-    margin-left: 16px;
+    margin-left: 6px;
     cursor: pointer;
     border: none;
 }
@@ -57,5 +57,19 @@ code {
 
 .check-button:hover {
     background: url("assets/check-solid.svg");
+    background-size: contain;
+}
+
+.undo-button {
+    width: 40px;
+    height: 40px;
+    background: url("assets/undo-outline.svg");
+    background-size: contain;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+}
+
+.undo-button:hover {
     background-size: contain;
 }

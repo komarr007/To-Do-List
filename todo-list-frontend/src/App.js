@@ -1,6 +1,7 @@
 import Particle from "./component/particle/Particle"
 import Card from "./component/card/Card"
 import Modals from "./component/modals/Modals"
+import { ToastContainer } from "react-toastify"
 import React, { useState } from "react"
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                 <Card state="Done" />
             </div>
             <Modals onClose={() => setShow(false)} show={show} />
+            <ToastContainer />
         </div>
     )
 }

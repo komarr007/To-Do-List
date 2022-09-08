@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios"
+import { toast } from "react-toastify"
 import "./style.css"
 
 const Modals = (props) => {
@@ -20,11 +21,16 @@ const Modals = (props) => {
     }
 
     const addPosts = async (title, description) => {
-        await axios
-            .post("http://127.0.0.1:8000/record?title=" + title + "&desc=" + description)
-            .then((response) => {
-                setPosts([response.data, ...posts])
-            })
+        try {
+            await axios
+                .post("http://127.0.0.1:8000/record?title=" + title + "&desc=" + description)
+                .then((response) => {
+                    setPosts([response.data, ...posts])
+                })
+            toast.success("Add List Success")
+        } catch (e) {
+            toast.error("Add List Failed")
+        }
     }
 
     return (

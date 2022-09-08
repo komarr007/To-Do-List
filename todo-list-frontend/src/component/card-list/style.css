@@ -1,18 +1,26 @@
 .card-list {
     background-color: aquamarine;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius: 5px;
     margin-bottom: 10px;
-    padding: 0.02rem 15px 2px 15px;
+    padding: 0.02rem 2px 0 8px;
 }
 
-button {
-    height: 30%;
+.card-list-item {
+    max-width: 70%;
+}
+
+.card-list-button {
+    padding: 0;
 }
 
 h2,
 p {
     color: black;
+}
+p {
+    text-align: justify;
 }
